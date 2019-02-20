@@ -5,12 +5,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Connected.Authorization.WebHost.Controllers
 {
-    [Route("api/authorization")]
-    public class AuthController : Controller
+    [Route("api/[controller]")]
+    public class AuthorizationController : Controller
     {
         private readonly IAuthenticationService _authenticationService;
 
-        public AuthController(IAuthenticationService authenticationService)
+        public AuthorizationController(IAuthenticationService authenticationService)
         {
             _authenticationService = authenticationService;
         }
@@ -37,6 +37,7 @@ namespace Connected.Authorization.WebHost.Controllers
 
         [Authorize]
         [HttpGet]
+        [Route("Authorize")]
         public IActionResult Authorize()
         {
             return Ok();
