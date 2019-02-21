@@ -5,11 +5,11 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Connected.Accounts.WebHost", "src\Connected.Accounts.Api\Connected.Accounts.WebHost.csproj", "{59B8D7E0-5FB6-4D3F-9CDE-B1C0D82D6A3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Accounts.Data", "Connected.Accounts.Data\Connected.Accounts.Data.csproj", "{FC10FF7F-2E53-431D-9AF6-AD56804D440C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Accounts.Data", "src\Connected.Accounts.Data\Connected.Accounts.Data.csproj", "{FC10FF7F-2E53-431D-9AF6-AD56804D440C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Accounts.Domain", "Connected.Accounts.Domain\Connected.Accounts.Domain.csproj", "{3812D265-49E0-4DEA-884F-272BA3C80D66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Accounts.Domain", "src\Connected.Accounts.Domain\Connected.Accounts.Domain.csproj", "{3812D265-49E0-4DEA-884F-272BA3C80D66}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Accounts.Business", "Connected.Accounts.Business\Connected.Accounts.Business.csproj", "{E7E3DE5A-FF08-4376-A1A2-E5F0333A9F05}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Accounts.Business", "src\Connected.Accounts.Business\Connected.Accounts.Business.csproj", "{E7E3DE5A-FF08-4376-A1A2-E5F0333A9F05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
