@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore;
 
-namespace Connected.Authorization.WebHost
+namespace Connected.Accounts.WebHost
 {
     public class Program
     {
@@ -10,7 +11,7 @@ namespace Connected.Authorization.WebHost
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            Microsoft.AspNetCore.WebHost.CreateDefaultBuilder(args)
+            WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
     }
 }

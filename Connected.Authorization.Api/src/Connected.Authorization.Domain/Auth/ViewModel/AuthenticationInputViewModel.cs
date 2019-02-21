@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Connected.Auth.Domain.Auth.ViewModel
+namespace Connected.Authorization.Domain.Auth.ViewModel
 {
-    public class AuthenticationViewModel
+    public class AuthenticationInputViewModel
     {
         [Required]
         [EmailAddress]
