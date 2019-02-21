@@ -8,7 +8,7 @@ namespace Connected.Accounts.Domain.Accounts
     {
         bool IsUserAlreadyRegistered(string email);
 
-        Task CreateApplicationUser(UserAccountDto userDto);
+        Task CreateNewUserAccount(UserAccountDto userDto);
 
         List<UserAccountDto> GetAllUsers();
 

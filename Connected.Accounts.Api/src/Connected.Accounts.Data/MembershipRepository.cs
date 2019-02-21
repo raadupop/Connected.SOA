@@ -20,7 +20,7 @@ namespace Connected.Accounts.Data
             return _accountsDbContext.Users.SingleOrDefault(u => u.Email == email) != null;
         }
 
-        public async Task CreateApplicationUser(UserAccountDto userAccountDto)
+        public async Task CreateNewUserAccount(UserAccountDto userAccountDto)
         {
             _accountsDbContext.Add(userAccountDto);
             await _accountsDbContext.SaveChangesAsync();

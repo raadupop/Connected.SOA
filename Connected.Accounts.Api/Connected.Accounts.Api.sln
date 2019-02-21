@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Connected.Accounts.WebHost", "src\Connected.Accounts.Api\Connected.Accounts.WebHost.csproj", "{59B8D7E0-5FB6-4D3F-9CDE-B1C0D82D6A3F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Connected.Accounts.WebHost", "src\Connected.Accounts.WebHost\Connected.Accounts.WebHost.csproj", "{59B8D7E0-5FB6-4D3F-9CDE-B1C0D82D6A3F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Connected.Accounts.Data", "src\Connected.Accounts.Data\Connected.Accounts.Data.csproj", "{FC10FF7F-2E53-431D-9AF6-AD56804D440C}"
 EndProject
