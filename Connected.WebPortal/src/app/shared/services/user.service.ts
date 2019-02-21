@@ -11,17 +11,17 @@ export class UserService {
     constructor(private http: HttpClient) { }
 
     getAllUserAccounts() {
-        return this.http.get<UserAccountGrid>(`${environment.API_URL}/accounts/GetAllUsers`);
+        return this.http.get<UserAccountGrid>(`${environment.API_URL}/accounts/getAll`);
     }
     createNewUserAccount(userAccount: UserRegistration) {
-      return this.http.post(`${environment.API_URL}/accounts/CreateUserAccount`, userAccount);
+      return this.http.post(`${environment.API_URL}/accounts/create`, userAccount);
     }
 
     updateUserIdentity(userAccount: UserAccount) {
-      return this.http.put(`${environment.API_URL}/accounts/UpdateUserIdentity`, userAccount)
+      return this.http.put(`${environment.API_URL}/accounts/update`, userAccount)
     }
 
     deleteUserIdentity(userId: number) {
-      return this.http.delete(`${environment.API_URL}/accounts/RemoveUserIdentity/` + userId)
+      return this.http.delete(`${environment.API_URL}/accounts/delete/` + userId)
     }
 }

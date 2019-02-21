@@ -12,7 +12,7 @@ export class AuthService {
   constructor(private http: HttpClient) { }
 
   login(authenticationModel: AuthenticationModel) {
-      return this.http.post<any>(`${environment.API_URL}/accounts/authenticate`, authenticationModel)
+      return this.http.post<any>(`${environment.API_URL}/authorization/authenticate`, authenticationModel)
           .pipe(map(result => {
               // login successful if there's a jwt token in the response
               if (result && result.authorizationToken) {
