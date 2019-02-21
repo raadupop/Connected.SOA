@@ -1,0 +1,23 @@
+.col-sm-3half, .col-sm-8half {
+  position: relative;
+  min-height: 1px;
+}
+
+@media (min-width: 768px) {
+  .col-sm-3half, .col-sm-8half {
+      float: left;
+  }
+  .col-sm-3half {
+      width: 29.16666667%;
+  }
+  .col-sm-8half {
+      width: 70.83333333%;
+  }
+}
+
+.presentation-content {
+  padding: 175px 55px 55px 55px;
+  min-height: 100vh;
+  display: block;
+  background-color: #f7f7f7;
+}

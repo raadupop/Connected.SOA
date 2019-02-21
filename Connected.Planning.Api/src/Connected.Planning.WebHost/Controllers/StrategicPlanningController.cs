@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Connected.Planning.Domain.Planning;
 using Connected.Planning.Domain.Planning.ViewModel;
@@ -8,12 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Connected.Planning.WebHost.Controllers
 {
-    [Route("api/[controller]")]
-    public class PlanningController : Controller
+    [Route("api/planning/[controller]")]
+    public class StrategicPlanningController : Controller
     {
         private readonly IPlanningService _planningService;
 
-        public PlanningController(IPlanningService planningService)
+        public StrategicPlanningController(IPlanningService planningService)
         {
             _planningService = planningService;
         }

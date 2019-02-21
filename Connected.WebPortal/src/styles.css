@@ -1,0 +1,108 @@
+@import "~font-awesome/css/font-awesome.css";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('./assets//fonts/poppins/Poppins-Regular.ttf'); 
+}
+
+html {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+p {
+	font-family: Poppins-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
+
+h1, h2, h3 {
+  font-family: Poppins-Regular;
+  color: #3d3c3c;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.col-sm-1half, .col-sm-10half {
+  position: relative;
+  min-height: 1px;
+}
+
+@media (min-width: 768px) {
+  .col-sm-1half, .col-sm-10half {
+    float: left;
+  }
+  .col-sm-1half {
+    width: 15%;
+  }
+  .col-sm-10half {
+    width: 85%;
+  }
+}
+
+.card {
+  border-radius: 5px;
+  box-shadow: 0 1px 20px 0 rgba(69,90,100,0.08);
+  border: none;
+  margin-bottom: 30px;
+}
+
+.card-header {
+  border-bottom: none;
+  background-color: transparent;
+  padding: 25px 20px;
+}
+.card-body {
+  padding-top: 0 0 1.25rem 1.25rem 1.25rem;
+}
+
+.table > thead > th {
+  border-bottom: 2px
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.responsive-table {
+  width: 100%;
+  display: inline-block;
+  overflow-x: auto;
+}
+
+.card .card-body table tr {
+  padding-bottom: 20px;
+}
+
+.btn-action {
+  float: none;
+  margin: 5px;
+}
+
+.td-action-fit {
+  white-space: nowrap;
+  width: 1%;
+}
+
+.container-fluid {
+  height: calc(100vh - 180px);
+}

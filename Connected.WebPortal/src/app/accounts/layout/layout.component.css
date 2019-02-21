@@ -1,0 +1,9 @@
+.presentation-img{
+  background-image: url('/assets/img/bg-01.jpg');
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+}

@@ -1,0 +1,171 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header text-left">
+          <h3>Let's set the plans</h3>
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-5" [ngClass]="{'full-box': viewMode == 'tab3'}">
+              <img class="img-fluid sticky-bottom-img" src="../../../../assets/img/Urbanist_Architecture_the-difference-between-planning-permission-and-building-regulations-approval-1-1200x570.jpg" alt="Responsive image">
+            </div>
+            <div class="col-md">
+              <form action>
+                <div class="wizard" role="application">
+                  <div class="steps">
+                    <ul role="tab-list">
+                      <li role="tab" [class.active]="viewMode == 'tab1'" id="tab1" (click)="viewMode = 'tab1'; fadeIn();">
+                        <span class="number">1.</span>
+                      </li>
+                      <li role="tab" [class.active]="viewMode == 'tab2'" id="tab2" (click)="viewMode = 'tab2'; fadeIn();">
+                        <span class="number">2.</span>
+                      </li>
+                      <li role="tab" [class.active]="viewMode == 'tab3'" id="tab3" (click)="viewMode = 'tab3'; fadeIn();">
+                        <span class="number">3.</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="content" [ngSwitch]="viewMode">
+                    <section id="tab1" [@animationFedInFedOut]="bindingVar" role="tabpanel" aria-labelledby="tab1" *ngSwitchCase="'tab1'">
+                      <div class="body">
+                        <div class="form-group">
+                          <label for="planName">Title of the plan *</label>
+                          <input type="planName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                          <label for="description">Description *</label>
+                          <textarea class="form-control" id="description" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                          <label for="motivationStatement">Motivation Statement *</label>
+                          <textarea class="form-control" id="motivationStatement" rows="3"></textarea>
+                        </div>
+                      </div>
+                    </section>
+                    <section id="tab2" [@animationFedInFedOut]="bindingVar" role="tabpanel" aria-labelledby="tab2" *ngSwitchCase="'tab2'">
+                      <div class="body">
+                        <div class="form-group">
+                          <label for="planName">When do you plan to start? *</label>
+                          <input [owlDateTime]="dt1" [owlDateTimeTrigger]="dt1" placeholder="Date Time" class="form-control">
+                          <owl-date-time #dt1></owl-date-time>
+                        </div>
+                        <div class="form-group">
+                          <label for="description">When do you plan to end your journey? *</label>
+                          <input [owlDateTime]="dt2" [owlDateTimeTrigger]="dt2" placeholder="Date Time" class="form-control">
+                          <owl-date-time #dt2></owl-date-time>
+                        </div>
+                        <label class="mb-3" for="freeTimeSlots">What is your free time slots usually?</label>
+                        <div class="custom-control custom-radio mb-2">
+                          <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                          <label class="custom-control-label" for="customRadio1">Between 6 PM and 9 PM</label>
+                        </div>
+                        <div class="custom-control custom-radio">
+                          <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                          <label class="custom-control-label" for="customRadio2">Between 8 PM and 10 PM</label>
+                        </div>
+                      </div>
+                    </section>
+                    <section id="tab3" [@animationFedInFedOut]="bindingVar" role="tabpanel" aria-labelledby="tab3" *ngSwitchCase="'tab3'">
+                      <div class="body">
+                        <tags-input-lite class="tags-input-lite" #fixedTimeActivityInput [(tags)]="routineActivities">
+                          <form (submit)="fixedTimeActivityInput.addTag(name.value); name.value = '';" class="form d-flex align-items-start flex-column bd-highlight">
+                            <label class="bd-highlight" for="activity">Activity to be scheduled in your free time</label>
+                            <input type="text" #name placeholder="New activity" class="form-control bd-highlight"/>
+                            <small id="activityHelp" class="form-text text-muted">
+                              * You will be able to add activities later as well
+                            </small>
+                            <button type="submit" class="btn btn-primary submit bd-highlight mt-3 ml-auto">
+                              Add
+                            </button>
+                          </form>
+                          <div class="table-responsive">
+                            <table class="table">
+                              <thead class="thead-dark">
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">Activity Name</th>
+                                  <th scope="col">Time allocation</th>
+                                  <th scope="col">Deadline</th>
+                                  <th scope="col">Priority</th>
+                                  <th scope="col">Actions</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let activity of fixedTimeActivityInput.tags; let i = index" [attr.data-index]="i">
+                                  <th scope="row">{{ i + 1 }}</th>
+                                  <td>{{ activity }}</td>
+                                  <td>
+                                    <input name="dts" placeholder="Time investment:"
+                                      [(ngModel)]="dateTime"
+                                      [owlDateTimeTrigger]="dts" [owlDateTime]="dts">
+                                    <owl-date-time [pickerType]="'timer'" #dts></owl-date-time>
+                                  </td>
+                                  <td>
+                                    <input name="dte" placeholder="Deadline:"
+                                      [(ngModel)]="dateTime"
+                                      [owlDateTimeTrigger]="dte" [owlDateTime]="dte">
+                                    <owl-date-time #dte></owl-date-time>
+                                  </td>
+                                  <td>
+                                    <select class="browser-default custom-select">
+                                      <option selected></option>
+                                      <option value="1">1</option>
+                                      <option value="2">2</option>
+                                      <option value="3">3</option>
+                                    </select>
+                                  </td>
+                                  <td>
+                                    <a (click)="fixedTimeActivityInput.removeTag(activity)" class="tags remove">
+                                      Remove
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+
+                        </tags-input-lite>
+                        <div class="tags-suggestions">
+                          <label for="tagSuggestions">Some suggestions:</label>
+                          <div>
+                            <button type="button" class="btn btn-outline-warning m-2">Job working</button>
+                            <button type="button" class="btn btn-outline-warning m-2">Daily planning</button>
+                            <button type="button" class="btn btn-outline-warning m-2">Reading</button>
+                            <button type="button" class="btn btn-outline-warning m-2">Watching on TV</button>
+                            <button type="button" class="btn btn-outline-warning m-2">Example 1</button>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    <div class="actions">
+                      <ul role="menu">
+                        <li [ngClass]="{'d-none': viewMode[viewMode.length - 1] === '1'}">
+                          <a (click)="previousTab()">
+                            Previous
+                          </a>
+                        </li>
+                        <li [ngClass]="{
+                          'step-last': viewMode == 'tab3', 
+                          'd-none': viewMode != 'tab3'}">
+                          <a>
+                            Finish
+                          </a>
+                        </li>
+                        <li [ngClass]="{'d-none': viewMode == 'tab3'}">
+                          <a (click)="nextTab()">
+                            Next
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

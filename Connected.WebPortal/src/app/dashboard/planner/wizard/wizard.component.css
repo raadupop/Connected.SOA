@@ -1,0 +1,186 @@
+.sticky-bottom-img {
+  position: absolute;
+  bottom: -20px;
+}
+
+.wizard > .steps .number {
+  display: none;
+}
+
+.steps {
+  margin-bottom: 30px;
+}
+
+.steps > ul {
+  display: flex;
+  position: relative;
+}
+
+.steps ul:before {
+  content: "Plan information";
+  font-size: 22px;
+  font-family: poppins-semibold;
+  color: #333;
+  top: -38px;
+  position: absolute;
+}
+.wizard {
+  padding: 45px 30px 10px 30px
+}
+
+.steps ul li {
+  width: 20.16%;
+  margin-right: 10px;
+}
+
+.steps ul li.active {
+  background: #43aafceb;
+  transition: all .3s ease;
+}
+
+.steps ul li {
+  display: inline-block;
+  width: 100%;
+  height: 7px;
+  border-radius: 3.5px;
+  background: #e6e6e6; 
+}
+
+.steps ul li:hover {
+  display: inline-block;
+  width: 100%;
+  height: 7px;
+  border-radius: 3.5px;
+  background: #e6e6e6; 
+  cursor: pointer;
+}
+
+.actions ul {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
+.content {
+  transition: all .3s ease 1s;
+}
+
+.actions li a {
+  padding: 0;
+  border: none;
+  display: inline-flex;
+  height: 51px;
+  width: 135px;
+  align-items: center;
+  background: #fc9543eb;
+  cursor: pointer;
+  position: relative;
+  padding-left: 41px;
+  color: #333;
+  transform: perspective(1px) translateZ(0);
+  transition-duration: .3s;
+}
+
+.actions li a:before {
+  content: '\f061';
+  position: absolute;
+  right: 35px;
+  font-family: FontAwesome;
+  transform: translateZ(0);
+}
+
+.actions li:nth-child(2) a:before {
+  content: '';
+}
+
+.actions li:first-child a:hover {
+  background: #ccc;
+}
+
+.actions li:first-child a {
+  padding-left: 48px;
+  background: #e6e6e6;
+}
+
+.actions li:first-child a:before {
+  content: '\f060';
+  left: 26px;
+  font-family: FontAwesome;
+  transform: translateZ(0);
+}
+
+.actions li a:hover {
+  background: #ff8b2c;
+}
+
+.actions li a {
+  text-decoration: none;
+}
+
+.tags-suggestions {
+  margin-top: 20px;
+  border-radius: 20px;
+  border: 2px solid #33333330;
+  padding: 18px;
+}
+
+:host {
+	display: block ;
+	font-size: 18px ;
+}
+
+.tags-input-lite {
+  border-radius: 20px;
+  border: 2px solid #33333330;
+	box-sizing: border-box ;
+	display: block ;
+	margin: 20px 0px 20px 0px ;
+	padding: 17px 17px 0px 17px ;
+}
+
+.full-box {
+  display: none;
+}
+
+.step-last {
+  justify-content: flex-end;
+}
+
+.form {
+	display: flex ;
+	margin-bottom: 14px ;
+}
+
+.form	input {
+  flex: 1 1 auto ;
+  font-size: inherit ;
+  margin-right: 10px ;
+}
+
+.submit {
+  flex: 0 0 auto ;
+  font-size: inherit ;
+  padding-left: 15px ;
+  padding-right: 15px ;
+}
+
+.tags {
+	margin: 0px 0px 0px 0px ;
+	padding: 0px 0px 0px 35px ;
+}
+
+.tag {
+  margin: 5px 0px 0px 0px ;
+}
+
+.label {
+  display: inline-block ;
+  font-variant: small-caps ;
+  margin-right: 13px ;
+}
+
+.remove {
+  color: #999999 ;
+  cursor: pointer ;
+  text-decoration: underline ;
+}

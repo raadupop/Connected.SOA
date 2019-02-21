@@ -32,8 +32,10 @@ namespace Connected.Accounts.WebHost
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            var conn = _configuration.GetConnectionString("DefaultConnection");
+
             // Database configuration
-            services.AddDbContext<AccountsDbContext>(option => option.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<AccountsDbContext>(option => option.UseSqlServer(conn));
 
             services.AddAutoMapper();
 

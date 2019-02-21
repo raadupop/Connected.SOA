@@ -1,0 +1,70 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>All user's available</h5>
+          <span>Click on buttons to perform actions</span>
+        </div>
+        <div class="card-body">
+          <div class="responsive-table">
+            <table *ngIf="usersGrid" class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                  <th>Email</th>
+                  <th>Date Created</th>
+                  <th class="tabledit-toolbar-column"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let user of usersGrid.userAccounts; index as i">
+                  <th scope="row">{{ i + 1 }}</th>
+                  <td>{{ user.firstName }}</td>
+                  <td>{{ user.lastName }}</td>
+                  <td>{{ user.email }}</td>
+                  <td>{{ user.dateCreated }}</td>
+                  <td class="td-action-fit">
+                    <div class="btn-group btn-group-sm ">
+                      <button onmousedown="event.preventDefault()" (click)="editUser(user)" class="btn btn-primary btn-action">
+                        <i class="fas fa-edit"></i>
+                      </button>
+                      <button onmousedown="event.preventDefault()" class="btn btn-danger btn-action"   
+                        [swal]="deleteUserSwal">
+                        <i class="fas fa-trash-alt"></i>
+                      </button>
+                      <swal 
+                        #deleteUserSwal
+                        title="Are you sure?"
+                        text="You won't be able to revert this!"
+                        type="warning"
+                        confirmButtonText="Yes, delete it"
+                        [showCancelButton]="true"
+                        [focusCancel]="true"
+                        (confirm)="this.deleteUser(user.id)">
+                    </swal>
+                    <swal
+                      #deletedUserConfirmation
+                      title="User has been deleted with success."
+                      type="success"
+                      timer="1500"
+                      [showConfirmButton]="false">
+                    </swal>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <button class="btn btn-primary" data-toggle="modal" (click)="createUser()">
+            Add new user
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-create-user-modal (modalSave)="loadAllUsers()" #createUserModal></app-create-user-modal>
+<app-edit-user-modal (modalSave)="loadAllUsers()" #editUserModal></app-edit-user-modal>

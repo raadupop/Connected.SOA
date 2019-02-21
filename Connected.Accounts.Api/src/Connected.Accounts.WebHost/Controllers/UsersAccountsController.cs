@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Connected.Accounts.WebHost.Controllers
 {
-    [Route("api/[controller]")]
-    public class AccountsController : Controller
+    [Route("api/accounts/[controller]")]
+    public class UsersAccountsController : Controller
     {
         private readonly IMembershipService _membershipService;
 
-        public AccountsController(IMembershipService membershipService)
+        public UsersAccountsController(IMembershipService membershipService)
         {
             _membershipService = membershipService;
         }
@@ -38,7 +38,7 @@ namespace Connected.Accounts.WebHost.Controllers
         }
 
         [Route("GetAll")]
-        public IActionResult GetAllUsers()
+        public IActionResult GetAllUsersAccounts()
         {
             var users = _membershipService.GetAllUsersAccounts();
 
@@ -63,7 +63,7 @@ namespace Connected.Accounts.WebHost.Controllers
 
         [HttpPut]
         [Route("Update")]
-        public async Task<IActionResult> UpdateUser([FromBody] UserAccountViewModel updatedUserAaAccountViewModel)
+        public async Task<IActionResult> UpdateUserAccount([FromBody] UserAccountViewModel updatedUserAaAccountViewModel)
         {
             if (!ModelState.IsValid)
             {

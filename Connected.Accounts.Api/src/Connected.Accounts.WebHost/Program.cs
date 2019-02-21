@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using System.IO;
+using System.Reflection;
+using Microsoft.AspNetCore.Hosting;
 
 namespace Connected.Accounts.WebHost
 {
@@ -6,6 +8,8 @@ namespace Connected.Accounts.WebHost
     {
         public static void Main(string[] args)
         {
+            //var rootPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
+            //Directory.SetCurrentDirectory(rootPath);
             CreateWebHostBuilder(args).Build().Run();
         }
 
