@@ -1,0 +1,29 @@
+{
+    "routes": [
+        {
+            "endpoint": "/authorization",
+            "destination": {
+                "uri": "http://localhost:13840/api/authorization/",
+                "requiresAuthentication": "false"
+            }
+        },
+        {
+            "endpoint": "/accounts",
+            "destination": {
+                "uri": "http://localhost:2320/api/accounts/",
+                "requiresAuthentication": "true"
+            }
+        },
+        {
+            "endpoint": "/planning",
+            "destination": {
+                "uri": "http://localhost:6337/api/planning/",
+                "requiresAuthentication": "true"
+            }
+        }
+
+    ],
+    "authenticationService": {
+        "uri": "https://localhost:13840/api/authorization/authorize/"
+    }
+}
